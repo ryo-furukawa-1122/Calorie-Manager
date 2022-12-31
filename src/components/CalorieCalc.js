@@ -65,7 +65,7 @@ const CalorieCalc = () => {
                 <div>
                     <CalorieIn value={newValue1} valueChange={this.changeValue1} />
                     <CalorieIn value={newValue2} valueChange={this.changeValue2} />
-                    {/* <Select options={activity} /> */}
+                    <Select options={activity} />
                     <CalorieOut value={this.state.answer} />
                 </div>
             )
