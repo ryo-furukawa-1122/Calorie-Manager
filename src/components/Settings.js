@@ -36,7 +36,7 @@ const Settings = () => {
                     <input className='dark:text-slate-700' id='mealset' type={'text'}/>
                     回
                 </label>
-                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-1/5 mx-auto'>セット</button>
+                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto'>セット</button>
             </div>
             <div className='p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
                 total
