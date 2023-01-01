@@ -7,16 +7,18 @@ import Table from './components/Table';
 
 function App() {
   return (
-    <div className='flex-auto text-slate-700 dark:text-slate-200 relative'>
+    <div>
       <Background />
-      <Header />
-      <div className='container'>
-        <Settings />
-        <Table />
+      <div className='flex-auto text-slate-700 dark:text-slate-200 relative'>
+        <Header />
+        <div className='container'>
+          <Settings />
+          <Table />
+        </div>
+        {/* <p className='m-5 relative'>
+          食事管理をサポートします
+        </p> */}
       </div>
-      {/* <p className='m-5 relative'>
-        食事管理をサポートします
-      </p> */}
     </div>
   );
 }
