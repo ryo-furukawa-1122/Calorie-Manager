@@ -28,12 +28,12 @@ const Settings = () => {
                 {/* <CalorieCalc /> */}
                 <label className='m-2'>
                     基礎代謝：
-                    <input className='dark:text-slate-700' id='base' type={'text'} />
+                    <input className='dark:text-slate-700 w-20' id='base' type={'text'} />
                     kcal
                 </label>
                 <label className='m-2'>
                     食事数：
-                    <input className='dark:text-slate-700' id='mealset' type={'text'}/>
+                    <input className='dark:text-slate-700 w-10' id='mealset' type={'text'}/>
                     回
                 </label>
                 <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto'>セット</button>
