@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css'
-import CalorieCalc from './components/CalorieCalc';
 import Header from './components/Header';
 import Background from './components/Background';
 import Settings from './components/Settings';
