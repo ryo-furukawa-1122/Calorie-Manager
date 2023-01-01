@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
         }
     }
     return (
-        <div className='flex'>
+        <div className='flex my-auto'>
             <div className="m-1 text-xs">
                 <svg
                 className="w-6 h-6 stroke-slate-900 dark:stroke-slate-100"
