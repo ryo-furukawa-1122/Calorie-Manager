@@ -24,13 +24,13 @@ const Settings = () => {
         <div className='flex flex-col relative'>
             <div className='flex flex-col p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
                 <Select className='dark:text-slate-700 m-2' options={purpose} />
-                <Select className='dark:text-slate-700 m-2' options={activity} />
                 {/* <CalorieCalc /> */}
                 <label className='m-2'>
                     基礎代謝：
                     <input className='dark:text-slate-700 w-20 mx-3' id='base' type={'text'} />
                     kcal
                 </label>
+                <Select className='dark:text-slate-700 m-2' options={activity} />
                 <label className='m-2'>
                     食事数：
                     <input className='dark:text-slate-700 w-10 mx-3' id='mealset' type={'text'}/>

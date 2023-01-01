@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Background from './components/Background';
 import Settings from './components/Settings';
 import Table from './components/Table';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Settings />
           <Table />
         </div>
+        <Footer />
         {/* <p className='m-5 relative'>
           食事管理をサポートします
         </p> */}
