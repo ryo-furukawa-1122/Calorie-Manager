@@ -28,7 +28,7 @@ const ThemeSwitch = () => {
         <div className='flex'>
             <div className="m-1 text-xs">
                 <svg
-                className="w-6 h-6"
+                className="w-6 h-6 stroke-slate-900 dark:stroke-slate-100"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ const ThemeSwitch = () => {
             </div>
             <div className="m-1 text-xs">
                 <svg
-                className="w-6 h-6"
+                className="w-6 h-6 stroke-slate-900 dark:stroke-slate-100"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
