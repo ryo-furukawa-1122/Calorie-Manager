@@ -15,6 +15,8 @@ const Settings = () => {
         { value: '1.5', label: 'Active'}
     ]
 
+    let mealset = ['1', '2', '3'];
+
     onclick = (() => {
         let base = document.getElementById('base').value;
         let mealset = document.getElementById('set').value;
