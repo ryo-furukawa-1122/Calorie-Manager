@@ -9,16 +9,4 @@ const Footer = () => {
   )
 }
 
-// const Footertag = styled.footer`
-//     width: 100%;
-//     height: 100px;
-//     border-top: 1px solid #eaeaea;
-//     position: relative;
-//     z-index: 2;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     bottom: 0;
-// `;
-
 export default Footer
