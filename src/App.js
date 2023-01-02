@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <div className='font-sans'>
       <Background />
       <div className='flex-auto text-slate-700 dark:text-slate-200 relative'>
         <Header />
