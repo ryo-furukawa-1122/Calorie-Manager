@@ -21,13 +21,13 @@ const Settings = () => {
                 <Select className='dark:text-slate-700 m-2' options={purpose} />
                 <label className='m-2'>
                     基礎代謝：
-                    <input className='dark:text-slate-700 w-20 mx-3' id='base' type={'text'} />
+                    <input className='dark:bg-slate-500 w-20 mx-3' id='base' type={'text'} />
                     kcal
                 </label>
                 <Select className='dark:text-slate-700 m-2' options={activity} />
                 <label className='m-2'>
                     食事数：
-                    <input className='dark:text-slate-700 w-10 mx-3' id='mealset' type={'text'}/>
+                    <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'text'}/>
                     回
                 </label>
                 <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={() => {Table.reMake();}}>セット</button>

@@ -2,25 +2,28 @@ import React, { useState } from 'react'
 
 const Table = () => {
     const [mealset, setMealSet] = useState(5);
-    // const [meal, setMeal] = useState(Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;}));
-    const meal = Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;});
-    meal[mealset] = (['Total']);
+    const [arr, setArr] = useState(Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;}));
+    const [meal, setMeal] = useState(arr);
+    // const meal = Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;});
+    meal[mealset] = ('Total');
+    console.log('out');
 
     const cols = ['Meal', 'Carbohydrate (g)', 'Protein (g)', 'Fat (g)']
     const [rows, setRows] = useState(meal)
     
     function reMake() {
+        setMealSet(1);
         setMealSet(document.getElementById('mealset').value);
         console.log(mealset);
-        console.log(meal);
-        // setMeal();
-        // meal[mealset] = ('Total');
-        // setRows(meal);
+        // const arr = Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;});
+        // console.log(Array.apply(null, new Array(mealset)).map(function(v,i){ return 1+i;}));
+        setMeal(arr);
+        console.log(arr);
+        meal[mealset] = ('Total');
+        // console.log(meal);
+        setRows(meal);
         console.log('remake');
     }
-    // function clicked() {
-    //     console.log(document.getElementById('mealset').value);
-    // }
 
     return (
         <div className='p-2 z-1 relative bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-10 rounded shadow-md text-slate-700 dark:text-slate-200 text-center'>
@@ -37,9 +40,9 @@ const Table = () => {
                     {rows.map((value2) => (
                         <tr>
                             <th scope='cols'>{value2}</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'text'}/></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'text'}/></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'text'}/></td>
                         </tr>
                     ))}
                 </tbody>
