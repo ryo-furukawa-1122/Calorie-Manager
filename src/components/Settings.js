@@ -1,5 +1,6 @@
 import React from 'react'
 import Select from 'react-select'
+import Table from './Table'
 
 const Settings = () => {
     const purpose = [
@@ -14,18 +15,10 @@ const Settings = () => {
         { value: '1.5', label: 'Active'}
     ]
 
-    // let mealset = ['1', '2', '3'];
-
-    // onclick = (() => {
-    //     let base = document.getElementById('base').value;
-    //     // let mealset = document.getElementById('set').value;
-    // })
-
     return (
         <div className='flex flex-col relative'>
             <div className='flex flex-col p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
                 <Select className='dark:text-slate-700 m-2' options={purpose} />
-                {/* <CalorieCalc /> */}
                 <label className='m-2'>
                     基礎代謝：
                     <input className='dark:text-slate-700 w-20 mx-3' id='base' type={'text'} />
@@ -37,7 +30,7 @@ const Settings = () => {
                     <input className='dark:text-slate-700 w-10 mx-3' id='mealset' type={'text'}/>
                     回
                 </label>
-                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={"reMake()"}>セット</button>
+                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={() => {Table.reMake();}}>セット</button>
             </div>
             <div className='p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
                 1日の摂取量：<span id='intake'></span>kcal
