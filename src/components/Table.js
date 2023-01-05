@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const getNumArray = (n) => Array.apply(null, new Array(n)).map(function(v,i){ return 1+i;});
 
@@ -22,9 +22,9 @@ const Table = (props) => {
                     {rows.map((row) => (
                         <tr>
                             <th scope='cols'>{row}</th>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='x (g)' min={0}/></td>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='x (g)' min={0}/></td>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='x (g)' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
                         </tr>
                     ))}
                 </tbody>

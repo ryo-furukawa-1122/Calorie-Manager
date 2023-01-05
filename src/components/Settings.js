@@ -1,6 +1,5 @@
 import React from 'react'
 import Select from 'react-select'
-import Table from './Table'
 
 const Settings = (props) => {
     const [mealset, setMealSet] = props.mealSetState;
@@ -33,7 +32,7 @@ const Settings = (props) => {
                 <Select className='dark:text-slate-700 m-2' options={activity} />
                 <label className='m-2'>
                     食事数：
-                    <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'}/>
+                    <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onChange={handleMealNumChange} />
                     回
                 </label>
                 {/* <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={() => {Table.reMake();}}>セット</button> */}
