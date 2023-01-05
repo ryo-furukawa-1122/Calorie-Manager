@@ -3,7 +3,7 @@ import Settings from './Settings'
 import Table from './Table'
 
 const MakeTable = () => {
-    const [mealset, setMealSet] = useState(5);
+    const [mealset, setMealSet] = useState(3);
     return (
         <div>
             <Settings mealSetState={[mealset, setMealSet]} />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 
 const Settings = (props) => {
@@ -20,6 +20,18 @@ const Settings = (props) => {
         setMealSet(Number(event.target.value));
     }
 
+    // const base = Number(document.getElementById('base').value);
+
+    // const [purAmp, setPurAmp] = useState(1);
+    // const [actAmp, setActAmp] = useState(1);
+
+    // const Calc = (base, purAmp, actAmp) => {
+    //     const intake = base * purAmp * actAmp;
+    //     return (intake);
+    // }
+
+    const intake = 2000;
+
     return (
         <div className='flex flex-col relative'>
             <div className='flex flex-col p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
@@ -38,7 +50,7 @@ const Settings = (props) => {
                 {/* <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={() => {Table.reMake();}}>セット</button> */}
             </div>
             <div className='p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
-                1日の摂取量：<span id='intake'></span>kcal
+                1日の摂取量：<span className='mx-3' id='intake'>{intake}</span>kcal
             </div>
 
         </div>

@@ -22,9 +22,9 @@ const Table = (props) => {
                     {rows.map((row) => (
                         <tr>
                             <th scope='cols'>{row}</th>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
-                            <td><input className='dark:bg-slate-500 w-full' type={'number'} placeholder='' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full rounded' type={'number'} placeholder='' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full rounded' type={'number'} placeholder='' min={0}/></td>
+                            <td><input className='dark:bg-slate-500 w-full rounded' type={'number'} placeholder='' min={0}/></td>
                         </tr>
                     ))}
                 </tbody>
