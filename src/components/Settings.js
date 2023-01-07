@@ -27,13 +27,12 @@ const Settings = (props) => {
     const [actAmp, setActAmp] = useState(1);
     
     const handlePurAmp = (event) => {
-        console.log('purpose');
-        setPurAmp(Number(event.target.value));
+        setPurAmp(Number(event.value));
+        console.log(purAmp)
     }
-
     const handleActAmp = (event) => {
-        console.log('purpose');
-        setActAmp(Number(event.target.value));
+        setActAmp(Number(event.value));
+        console.log(actAmp)
     }
     
     const handleBase = () => {
@@ -46,13 +45,13 @@ const Settings = (props) => {
     return (
         <div className='flex flex-col relative'>
             <div className='flex flex-col p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
-                <Select className='dark:text-slate-700 m-2' options={purpose} onClick={handlePurAmp} />
+                <Select id='purpose' className='dark:text-slate-700 m-2' options={purpose} onChange={handlePurAmp} placeholder='目的' />
                 <label className='m-2'>
                     基礎代謝：
                     <input className='dark:bg-slate-500 w-20 mx-3' id='base' type={'text'} />
                     kcal
                 </label>
-                <Select className='dark:text-slate-700 m-2' options={activity} onClick={handleActAmp} />
+                <Select className='dark:text-slate-700 m-2' options={activity} onChange={handleActAmp} placeholder='活動量' />
                 <label className='m-2'>
                     食事数：
                     <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onClick={handleMealNumChange} />
