@@ -5,41 +5,54 @@ const Settings = (props) => {
     const [mealset, setMealSet] = props.mealSetState;
 
     const purpose = [
-        { value: 'up', label: '増量'},
-        { value: 'stay', label: 'キープ'},
-        { value: 'down', label: '減量'}
+        { value: 1.2, label: '増量（×1.2）'},
+        { value: 1, label: 'キープ（×1）'},
+        { value: 0.8, label: '減量（×0.8）'}
     ]
 
     const activity = [
-        { value: '1', label: 'Non-active'},
-        { value: '1.2', label: 'Normal'},
-        { value: '1.5', label: 'Active'}
+        { value: 1.2, label: 'Non-active（×1.2）'},
+        { value: 1.55, label: 'Normal（×1.55）'},
+        { value: 1.725, label: 'Active（×1.725）'}
     ]
     
     const handleMealNumChange = (event) => {
         setMealSet(Number(event.target.value));
+        // console.log('changed')
     }
 
+    
     const [base, setBase] = useState(0);
     const [purAmp, setPurAmp] = useState(1);
     const [actAmp, setActAmp] = useState(1);
-    const intake = base * purAmp * actAmp;
+    
+    const handlePurAmp = (event) => {
+        console.log('purpose');
+        setPurAmp(Number(event.target.value));
+    }
+
+    const handleActAmp = (event) => {
+        console.log('purpose');
+        setActAmp(Number(event.target.value));
+    }
     
     const handleBase = () => {
         setBase(Number(document.getElementById('base').value));
-        console.log('clicked')
+        // console.log('clicked')
     }
+
+    const intake = base * purAmp * actAmp;
 
     return (
         <div className='flex flex-col relative'>
             <div className='flex flex-col p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
-                <Select className='dark:text-slate-700 m-2' options={purpose} />
+                <Select className='dark:text-slate-700 m-2' options={purpose} onClick={handlePurAmp} />
                 <label className='m-2'>
                     基礎代謝：
                     <input className='dark:bg-slate-500 w-20 mx-3' id='base' type={'text'} />
                     kcal
                 </label>
-                <Select className='dark:text-slate-700 m-2' options={activity} />
+                <Select className='dark:text-slate-700 m-2' options={activity} onClick={handleActAmp} />
                 <label className='m-2'>
                     食事数：
                     <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onClick={handleMealNumChange} />
