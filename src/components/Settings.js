@@ -23,15 +23,10 @@ const Settings = (props) => {
     const [base, setBase] = useState(0);
     const [purAmp, setPurAmp] = useState(1);
     const [actAmp, setActAmp] = useState(1);
-    const [intake, setIntake] = useState(0);
+    const intake = base * purAmp * actAmp;
     
     const handleBase = () => {
         setBase(Number(document.getElementById('base').value));
-        console.log('clicked')
-    }
-
-    const handleIntake = () => {
-        setIntake(Number(base * purAmp * actAmp));
         console.log('clicked')
     }
 
@@ -50,7 +45,7 @@ const Settings = (props) => {
                     <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onClick={handleMealNumChange} />
                     回
                 </label>
-                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={() => {handleBase();handleIntake();}}>セット</button>
+                <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto' onClick={handleBase}>セット</button>
             </div>
             <div className='p-2 bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-5 rounded shadow-md'>
                 1日の摂取量：<span className='mx-3'>{intake}</span>kcal
