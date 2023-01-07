@@ -38,11 +38,6 @@ const Settings = (props) => {
         setBase(Number(event.target.value));
     }
     
-    // const handleBase = () => {
-    //     setBase(Number(document.getElementById('base').value));
-    //     // console.log('clicked')
-    // }
-
     const intake = base * purAmp * actAmp;
 
     return (
@@ -57,7 +52,7 @@ const Settings = (props) => {
                 <Select className='dark:text-slate-700 m-2' options={activity} onChange={handleActAmp} placeholder='活動量' />
                 <label className='m-2'>
                     食事数：
-                    <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onClick={handleMealNumChange} />
+                    <input className='dark:bg-slate-500 w-10 mx-3' id='mealset' type={'number'} max='10' min='1' onChange={handleMealNumChange} />
                     回
                 </label>
                 {/* <button id='set' className='rounded bg-sky-300 dark:bg-sky-600 px-4 py-2 w-2/5 mx-auto'>セット</button> */}
