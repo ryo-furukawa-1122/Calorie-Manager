@@ -6,7 +6,7 @@ const Table = (props) => {
     const mealset = props.mealSetState[0];
 
     const rows = getNumArray(mealset)
-    const cols = ['Meal', 'Carbohydrate (g)', 'Protein (g)', 'Fat (g)']
+    const cols = ['Meal', 'Protein (g)', 'Fat (g)', 'Carbohydrate (g)']
     
     const totalCalc = () => {
         var tableElem = document.getElementById('table');
@@ -19,7 +19,14 @@ const Table = (props) => {
             }
             rowElems[len].cells[j].innerText = t[j-1];
         }
+        var energy = 0;
+        energy += 4 * parseInt(Number(rowElems[len].cells[1].innerText));
+        energy += 9 * parseInt(Number(rowElems[len].cells[2].innerText));
+        energy += 4 * parseInt(Number(rowElems[len].cells[3].innerText));
+        document.getElementById('energy').innerText = energy;
+        
     }
+
     
     return (
         <div className='p-2 z-1 relative bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-10 rounded shadow-md text-slate-700 dark:text-slate-200 text-center'>
@@ -48,6 +55,9 @@ const Table = (props) => {
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <span id='energy'></span>kcal
+            </div>
         </div>
     )
 }
