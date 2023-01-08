@@ -56,7 +56,7 @@ const Table = (props) => {
                 </tbody>
             </table>
             <div>
-                <span id='energy'></span>kcal
+                <span id='energy' className='mx-3'></span>kcal
             </div>
         </div>
     )
