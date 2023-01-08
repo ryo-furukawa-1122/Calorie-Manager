@@ -13,10 +13,12 @@ const Table = (props) => {
     const totalCalc = () => {
         var tableElem = document.getElementById('table');
         var rowElems = tableElem.rows;
-        var t = 0;
+        var t = [0, 0, 0];
         var len = rowElems.length-1;
-        for (let i = 0; i < len; i++) {
-            t += parseInt(rowElems[i].cells[1].innerText);
+        for (let j = 1; j < 4; j++) {
+            for (let i = 0; i < len; i++) {
+                t[j-1] += parseInt(rowElems[i].cell[j].innerText);
+            }
         }
         console.log('calculated')
         return(t);
