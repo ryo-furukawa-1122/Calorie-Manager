@@ -8,26 +8,35 @@ const Table = (props) => {
     const rows = getNumArray(mealset)
     const cols = ['Meal', 'Carbohydrate (g)', 'Protein (g)', 'Fat (g)']
     
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState([0, 0, 0]);
 
     const totalCalc = () => {
         var tableElem = document.getElementById('table');
         var rowElems = tableElem.rows;
+        // console.log(rowElems)
         var t = [0, 0, 0];
         var len = rowElems.length-1;
+        // for (let i = 0; i < len; i++) {
+        //     // console.log(i);
+        //     for (let j = 1; j < 4; j++) {
+        //         // console.log(j);
+        //         t[j-1] += parseInt(rowElems[i].cells[j].innerText);
+        //     }
+        // }
+        // return(t);
         for (let j = 1; j < 4; j++) {
             for (let i = 0; i < len; i++) {
-                t[j-1] += parseInt(rowElems[i].cell[j].innerText);
+                console.log(t[j-1]);
+                t[j-1] += parseInt(Number(rowElems[i].cells[j].innerText));
             }
+            rowElems[len].cells[j].innerText = t[j-1];
         }
-        console.log('calculated')
-        return(t);
         // document.getElementsByClassName('total').innerText = t;
     }
 
     const reCalc = () => {
+        // console.log(total);
         setTotal(totalCalc());
-        console.log(total);
     }
 
     
@@ -41,7 +50,7 @@ const Table = (props) => {
                         ))}
                     </tr>
                 </thead>
-                <tbody id='table' onChange={reCalc}>
+                <tbody id='table' onChange={totalCalc}>
                     {rows.map((row) => (
                         <tr>
                             <th scope='cols'>{row}</th>
@@ -52,9 +61,9 @@ const Table = (props) => {
                     ))}
                     <tr>
                         <th>Total</th>
-                        <td>{total}</td>
-                        <td>{total}</td>
-                        <td>{total}</td>
+                        <td>{total[0]}</td>
+                        <td>{total[1]}</td>
+                        <td>{total[2]}</td>
                     </tr>
                 </tbody>
             </table>
