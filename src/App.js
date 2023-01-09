@@ -12,9 +12,9 @@ function App() {
       <div className='flex-auto text-slate-700 dark:text-slate-200 relative'>
         <Header />
         <div className='container mx-auto'>
-          {/* <h1 className='ja text-3xl m-3 font-bold text-slate-800 dark:text-slate-50'>
+          <h1 className='ja text-3xl m-3 font-bold text-slate-800 dark:text-slate-50'>
             カロリーマネージャー
-          </h1> */}
+          </h1>
           <h1 className='en text-3xl m-3 font-bold text-slate-800 dark:text-slate-50'>
             Calorie Manager
           </h1>
