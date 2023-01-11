@@ -31,26 +31,26 @@ const LangSwitch = () => {
         updateLanguage(language);
         localStorage.setItem('language', language);
     }
-
+    
     function setLanguageOnLoad() {
         const language = localStorage.getItem('language');
-        const languageSelect = document.getElementsByTagName('Select');
+        const languageSelect = document.getElementById('language-select');
         console.log(languageSelect);
         languageSelect.addEventListener('change', onLanguageChange);
         languageSelect.value = language ? language : languages[0];
         updateLanguage(languageSelect.value);
     }
 
-    setLanguageOnLoad();
+    // setLanguageOnLoad();
 
-    // document.addEventListener('DomContentLoaded', function() {
+    // document.addEventListener('DOMContentLoaded', function() {
     //     console.log('loaded');
     //     setLanguageOnLoad();
     // });
 
     return (
         <div className='flex mx-auto'>
-            <Select id='language-select' name='Language' options={languages} placeholder='Language' defaultValue={{label:'Ja', value:'ja'}} />
+            <Select id='language-select' name='Language' options={languages} placeholder='Language' defaultValue={{label:'Ja', value:'ja'}} onChange={setLanguageOnLoad} />
             {/* <select name='Language' id='language-select'>
                 <option value={'ja'} selected>Ja</option>
                 <option value={'en'}>En</option>
