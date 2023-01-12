@@ -4,8 +4,11 @@ import Header from './components/Header';
 import Background from './components/Background';
 import MakeTable from './components/MakeTable';
 import Footer from './components/Footer';
+import ReactGA from 'react-ga';
 
 function App() {
+  eactGA.initialize('G-YZMJG8DKTP');
+  ReactGA.send('pageview');
   return (
     <div className='font-sans'>
       <Background />
