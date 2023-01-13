@@ -54,7 +54,7 @@ const LangSwitch = () => {
     return (
         <div className='flex mx-auto'>
             {/* <Select id='language-select' name='Language' options={languages} placeholder='Language' defaultValue={{label:'Ja', value:'ja'}} onChange={setLanguageOnLoad} /> */}
-            <select className='dark:text-slate-700 rounded' name='Language' id='language-select' onClick={setLanguageOnLoad}>
+            <select className='rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select' onClick={setLanguageOnLoad}>
                 <option value={'ja'}>Ja</option>
                 <option value={'en'}>En</option>
             </select>
