@@ -6,7 +6,8 @@ const Table = (props) => {
     const mealset = props.mealSetState[0];
 
     const rows = getNumArray(mealset)
-    const cols = ['Meal', 'Protein (g)', 'Fat (g)', 'Carbohydrate (g)']
+    const cols = ['食事', 'タンパク質 [g]', '脂質 [g]', '炭水化物 [g]']
+    const colsEn = ['Meal', 'Protein (g)', 'Fat (g)', 'Carbohydrate (g)']
     
     const totalCalc = () => {
         var tableElem = document.getElementById('table');
@@ -32,8 +33,13 @@ const Table = (props) => {
         <div className='p-2 z-1 relative bg-slate-50 dark:bg-slate-700 w-5/6 mx-auto my-10 rounded shadow-md text-slate-700 dark:text-slate-200 text-center'>
             <table className='w-full align-middle'>
                 <thead>
-                    <tr>
+                    <tr className='ja'>
                         {cols.map((col) => (
+                            <th scope='col'>{col}</th>
+                        ))}
+                    </tr>
+                    <tr className='en hide'>
+                        {colsEn.map((col) => (
                             <th scope='col'>{col}</th>
                         ))}
                     </tr>
@@ -48,7 +54,8 @@ const Table = (props) => {
                         </tr>
                     ))}
                     <tr>
-                        <th>Total</th>
+                        <th className='ja'>合計</th>
+                        <th className='en hide'>Total</th>
                         <td></td>
                         <td></td>
                         <td></td>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ThemeSwitch from './ThemeSwitch'
+import LangSwitch from './LangSwitch'
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
           <img className='w-[70px] h-auto' src='./calorie-manager-logo.svg' alt='logo' />
         </a>
         <div className='flex flex-col'>
+          <LangSwitch />
           <ThemeSwitch />
         </div>
     </header>
