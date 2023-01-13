@@ -9,4 +9,10 @@
 .toggle-label {
     @apply block h-6 align-middle overflow-hidden text-gray-300 bg-gray-300 rounded-full cursor-pointer dark:text-gray-400 dark:bg-gray-400 dark:border-gray-400 border-gray-300 border-2;
 }
+/* .en {
+    @apply hidden;
+} */
+.hide {
+    @apply hidden;
+}
 @tailwind utilities;

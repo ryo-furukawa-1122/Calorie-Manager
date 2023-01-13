@@ -1,5 +1,5 @@
 import React from 'react'
-import Select from 'react-select'
+// import Select from 'react-select'
 
 const LangSwitch = () => {
     // const languages = [
@@ -9,20 +9,21 @@ const LangSwitch = () => {
     const languages = ['ja', 'en'];
 
     function updateLanguage(visiblelanguage) {
-        const hiddenElements = document.getElementsByClassName('hidden');
+        const hiddenElements = document.getElementsByClassName('hide');
         if (hiddenElements.length !== 0)
         Array.from(hiddenElements).forEach((hiddenElement) => {
-            hiddenElement.classList.remove('hidden');
+            hiddenElement.classList.remove('hide');
         });
         const hideLanguages = languages.filter(
             (language) => language !== visiblelanguage
         );
         hideLanguages.forEach((language) => {
-            console.log(language);
             const hideElements = document.getElementsByClassName(language);
-            if (hiddenElements.length !== 0)
+            // console.log(hideElements);
+            if (hideElements.length !== 0)
                 Array.from(hideElements).forEach((hideElement) => {
-                    hideElement.classList.add('hidden');
+                    console.log(hideElement);
+                    hideElement.classList.add('hide');
                 });
         });
     }
@@ -35,10 +36,10 @@ const LangSwitch = () => {
     }
     
     function setLanguageOnLoad() {
+        console.log('Loaded');
         const language = localStorage.getItem('language');
         const languageSelect = document.getElementById('language-select');
         languageSelect.addEventListener('change', onLanguageChange);
-        // console.log(languageSelect);
         languageSelect.value = language ? language : languages[0];
         updateLanguage(languageSelect.value);
     }
@@ -53,7 +54,7 @@ const LangSwitch = () => {
     return (
         <div className='flex mx-auto'>
             {/* <Select id='language-select' name='Language' options={languages} placeholder='Language' defaultValue={{label:'Ja', value:'ja'}} onChange={setLanguageOnLoad} /> */}
-            <select name='Language' id='language-select' onChange={setLanguageOnLoad}>
+            <select className='dark:text-slate-700 rounded' name='Language' id='language-select' onClick={setLanguageOnLoad}>
                 <option value={'ja'}>Ja</option>
                 <option value={'en'}>En</option>
             </select>
