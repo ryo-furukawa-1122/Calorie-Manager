@@ -1,11 +1,6 @@
 import React from 'react'
-// import Select from 'react-select'
 
 const LangSwitch = () => {
-    // const languages = [
-    //     { value: 'ja', label: 'Ja' },
-    //     { value: 'en', label: 'En' }
-    // ];
     const languages = ['ja', 'en'];
 
     function updateLanguage(visiblelanguage) {
@@ -19,7 +14,6 @@ const LangSwitch = () => {
         );
         hideLanguages.forEach((language) => {
             const hideElements = document.getElementsByClassName(language);
-            // console.log(hideElements);
             if (hideElements.length !== 0)
                 Array.from(hideElements).forEach((hideElement) => {
                     console.log(hideElement);
@@ -31,12 +25,10 @@ const LangSwitch = () => {
     function onLanguageChange(event) {
         const language = event.target.value;
         updateLanguage(language);
-        // console.log('onLanguageChange');
         localStorage.setItem('language', language);
     }
     
     function setLanguageOnLoad() {
-        console.log('Loaded');
         const language = localStorage.getItem('language');
         const languageSelect = document.getElementById('language-select');
         languageSelect.addEventListener('change', onLanguageChange);
@@ -44,16 +36,8 @@ const LangSwitch = () => {
         updateLanguage(languageSelect.value);
     }
 
-    // setLanguageOnLoad();
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     console.log('loaded');
-    //     setLanguageOnLoad();
-    // });
-
     return (
         <div className='flex mx-auto'>
-            {/* <Select id='language-select' name='Language' options={languages} placeholder='Language' defaultValue={{label:'Ja', value:'ja'}} onChange={setLanguageOnLoad} /> */}
             <select className='rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select' onClick={setLanguageOnLoad}>
                 <option value={'ja'}>Ja</option>
                 <option value={'en'}>En</option>
