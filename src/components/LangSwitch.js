@@ -38,7 +38,7 @@ const LangSwitch = () => {
 
     return (
         <div className='flex mx-auto'>
-            <select className='rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select' onClick={setLanguageOnLoad}>
+            <select className='py-1 px-4 rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select' onClick={setLanguageOnLoad}>
                 <option value={'ja'}>Ja</option>
                 <option value={'en'}>En</option>
             </select>
