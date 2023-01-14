@@ -54,8 +54,8 @@ const Table = (props) => {
                         </tr>
                     ))}
                     <tr>
-                        <th className='ja'>合計</th>
-                        <th className='en hide'>Total</th>
+                        {/* <th className='ja'>合計</th> */}
+                        <th>Total</th>
                         <td></td>
                         <td></td>
                         <td></td>
