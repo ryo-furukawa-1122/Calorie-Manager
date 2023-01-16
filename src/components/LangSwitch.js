@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const LangSwitch = () => {
     const languages = ['ja', 'en'];
+
+    useEffect(() => {
+        setLanguageOnLoad();
+    }, [])
+    
 
     function updateLanguage(visiblelanguage) {
         const hiddenElements = document.getElementsByClassName('hide');
@@ -38,7 +43,7 @@ const LangSwitch = () => {
 
     return (
         <div className='flex mx-auto'>
-            <select className='py-1 px-4 rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select' onClick={setLanguageOnLoad}>
+            <select className='py-1 px-4 rounded bg-slate-100 dark:bg-slate-600 cursor-pointer' name='Language' id='language-select'>
                 <option value={'ja'}>Ja</option>
                 <option value={'en'}>En</option>
             </select>
