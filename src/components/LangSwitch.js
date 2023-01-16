@@ -21,7 +21,6 @@ const LangSwitch = () => {
             const hideElements = document.getElementsByClassName(language);
             if (hideElements.length !== 0)
                 Array.from(hideElements).forEach((hideElement) => {
-                    console.log(hideElement);
                     hideElement.classList.add('hide');
                 });
         });

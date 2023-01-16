@@ -29,7 +29,6 @@ const Settings = (props) => {
     
     const handleMealNumChange = (event) => {
         setMealSet(Number(event.target.value));
-        // console.log('changed')
     }
 
     
@@ -39,11 +38,9 @@ const Settings = (props) => {
     
     const handlePurAmp = (event) => {
         setPurAmp(Number(event.value));
-        console.log(purAmp)
     }
     const handleActAmp = (event) => {
         setActAmp(Number(event.value));
-        console.log(actAmp)
     }
     const handleBase = (event) => {
         setBase(Number(event.target.value));
