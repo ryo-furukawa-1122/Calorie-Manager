@@ -8,6 +8,10 @@ const Table = (props) => {
     const rows = getNumArray(mealset)
     const cols = ['食事', 'タンパク質 [g]', '脂質 [g]', '炭水化物 [g]']
     const colsEn = ['Meal', 'Protein (g)', 'Fat (g)', 'Carbohydrate (g)']
+
+    const energy1 = props.energy1SetState[0];
+    const energy2 = props.energy2SetState[0];
+    const energy3 = props.energy3SetState[0];
     
     const totalCalc = () => {
         var tableElem = document.getElementById('table');
@@ -21,11 +25,11 @@ const Table = (props) => {
             rowElems[len].cells[j].innerText = t[j-1];
         }
         var energy = 0;
-        energy += 4 * parseInt(Number(rowElems[len].cells[1].innerText));
-        energy += 9 * parseInt(Number(rowElems[len].cells[2].innerText));
-        energy += 4 * parseInt(Number(rowElems[len].cells[3].innerText));
+        energy1 += 4 * parseInt(Number(rowElems[len].cells[1].innerText));
+        energy2 += 9 * parseInt(Number(rowElems[len].cells[2].innerText));
+        energy3 += 4 * parseInt(Number(rowElems[len].cells[3].innerText));
+        energy = energy1 + energy2 + energy3;
         document.getElementById('energy').innerText = energy;
-        
     }
 
     
