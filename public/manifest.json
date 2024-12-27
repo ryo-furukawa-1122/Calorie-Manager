@@ -3,7 +3,7 @@
     "name": "Calorie Manager",
     "icons": [
       {
-        "src": "calorie-manager-logo.png",
+        "src": "calorie-manager-logo-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
