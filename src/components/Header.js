@@ -1,6 +1,7 @@
 import React from 'react'
 import ThemeSwitch from './ThemeSwitch'
 import LangSwitch from './LangSwitch'
+import AddToHomeScreenButton from './AddToHomeScreenBotton'
 
 const Header = () => {
   return (
@@ -8,9 +9,14 @@ const Header = () => {
         <a href='/'>
           <img className='w-[70px] h-auto' src='./calorie-manager-logo.svg' alt='logo' />
         </a>
-        <div className='flex flex-col'>
-          <LangSwitch />
-          <ThemeSwitch />
+        <div className='flex flex-row'>
+          <div className='flex flex-col mr-4 my-auto'>
+            <AddToHomeScreenButton />
+          </div>
+          <div className='flex flex-col'>
+            <LangSwitch />
+            <ThemeSwitch />
+          </div>
         </div>
     </header>
   )
